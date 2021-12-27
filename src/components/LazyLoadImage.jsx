@@ -1,5 +1,4 @@
 import { PropTypes } from 'prop-types';
-import webpImage from './webpImage.jsx';
 import LazyLoadComponent from './LazyLoadComponent.jsx';
 import React from 'react';
 
@@ -27,7 +26,20 @@ class LazyLoadImage extends React.Component {
 	}
 
 	regularImg(props) {
-		return <img onLoad={this.onImageLoad()} {...props} />;
+		const { webpSrc, ...imgProps } = props;
+
+		return <img onLoad={this.onImageLoad()} {...imgProps} />;
+	}
+
+	webpImage(props) {
+		const { webpSrc, src, ...imgProps } = props;
+
+		return (
+			<picture {...imgProps}>
+				<source srcSet={webpSrc} type="image/webp" />
+				{this.regularImg({ src })}
+			</picture>
+		);
 	}
 
 	getImg() {
@@ -49,7 +61,7 @@ class LazyLoadImage extends React.Component {
 		} = this.props;
 
 		return this.props.webpSrc
-			? webpImage(imgProps.webpSrc, this.regularImg(imgProps))
+			? this.webpImage(imgProps)
 			: this.regularImg(imgProps);
 	}
 
