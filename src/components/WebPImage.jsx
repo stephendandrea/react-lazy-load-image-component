@@ -1,6 +1,6 @@
 import React from 'react';
 
-const webPImage = (webpSrc, fallbackImg) => {
+const webpImage = (webpSrc, fallbackImg) => {
 	return (
 		<picture>
 			<source srcSet={webpSrc} type="image/webp" />
@@ -9,4 +9,4 @@ const webPImage = (webpSrc, fallbackImg) => {
 	);
 };
 
-export default webPImage;
+export default webpImage;
