@@ -1,18 +1,12 @@
 import React from 'react';
 
-const WebPImage = (props, img) => {
-	const srcSplit = props.src.split('.');
-	const cacheString = srcSplit[1].split('?');
-	const webpSrc = `${srcSplit[0]}.webp${
-		cacheString[1] ? `?${cacheString[1]}` : ''
-	}`;
-
+const webPImage = (webpSrc, fallbackImg) => {
 	return (
 		<picture>
 			<source srcSet={webpSrc} type="image/webp" />
-			{img}
+			{fallbackImg}
 		</picture>
 	);
 };
 
-export default WebPImage;
+export default webPImage;
