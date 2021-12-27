@@ -1,6 +1,6 @@
 import React from 'react';
 
-const WebPImage = (props, img) => {
+const webPImage = (props, img) => {
 	const srcSplit = props.src.split('.');
 	const cacheString = srcSplit[1].split('?');
 	const webpSrc = `${srcSplit[0]}.webp${
@@ -15,4 +15,4 @@ const WebPImage = (props, img) => {
 	);
 };
 
-export default WebPImage;
+export default webPImage;
