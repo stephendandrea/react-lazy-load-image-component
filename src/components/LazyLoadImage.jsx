@@ -1,6 +1,6 @@
+import React from 'react';
 import { PropTypes } from 'prop-types';
 import LazyLoadComponent from './LazyLoadComponent.jsx';
-import React from 'react';
 
 class LazyLoadImage extends React.Component {
 	constructor(props) {
