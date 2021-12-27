@@ -31,14 +31,14 @@ class LazyLoadImage extends React.Component {
 		return <img onLoad={this.onImageLoad()} {...otherProps} />;
 	}
 
-	webpImage = (webpSrc, fallbackImg) => {
+	webpImage(webpSrc, fallbackImg) {
 		return (
 			<picture>
 				<source srcSet={webpSrc} type="image/webp" />
 				{fallbackImg}
 			</picture>
 		);
-	};
+	}
 
 	getImg() {
 		const {
