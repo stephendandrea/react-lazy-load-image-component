@@ -1,5 +1,5 @@
 import { PropTypes } from 'prop-types';
-import { WebPImage } from './WebPImage';
+import WebPImage from './WebPImage.jsx';
 import LazyLoadComponent from './LazyLoadComponent.jsx';
 import React from 'react';
 
